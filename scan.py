@@ -7,7 +7,13 @@ my_path = "/Users/petermurphy/github/KevinsKranks/Lil Wayne - Dedication 6 (DatP
 album = sorted(os.listdir(my_path))
 
 for f in album:
-    song = eyed3.load(str(f))
-    print(song.tag.artist)
-    print(song.tag.title)
-    print("/n")
+    if(f.endswith(".mp3")):
+        song = eyed3.load(my_path+"/"+f)
+        #print(dir(song.tag))
+        print(song.tag.album)
+        print(song.tag.artist)
+        print(song.tag.album_artist)
+        print(song.tag.title)
+        print(song.tag.genre)
+        #print(song.tag.year)
+        print("\n")
